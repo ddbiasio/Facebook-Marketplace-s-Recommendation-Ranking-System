@@ -1,2 +1,11 @@
 products.csv
-__pycache__/clean_tabular.cpython-310.pyc
+images.csv
+images/
+images_clean/
+.vscode/launch.json
+**/__pycache__/
+geckodriver.log
+.mypy_cache/
+*.egg-info/
+*.log
+

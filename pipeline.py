@@ -1,4 +1,5 @@
 from clean_tabular import CleanTabular
+from clean_images import CleanImages
 
 def clean_products():
 
@@ -15,7 +16,11 @@ def clean_products():
     # extract product name
     ct.split_data("product_name", '|', 0)
 
+def clean_images():
+    ci = CleanImages()
+    ci.clean_image_folder('images/', 'images_clean/')
 
 if __name__ == "__main__":
 
     clean_products()
+    clean_images()

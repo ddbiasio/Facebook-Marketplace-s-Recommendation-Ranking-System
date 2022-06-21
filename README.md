@@ -1,3 +1,4 @@
+
 # Facebook-Marketplace-s-Recommendation-Ranking-System
 
 ## Exploratory Data Analysis Findings
@@ -36,20 +37,29 @@ From the information currently available in the products data set we will theref
 - Location
 
 
-
 ## Data Cleaning
 - Remove £ from price and convert to float
 - Remove emojis from product description
 - Convert text to lowercase
 - Extract product name from text before the first | symbol
 
+## Image Cleaning
+- Resize all images to a maximum of 512x512, ensuring the aspect ration is maintained
+- Save images to a blank image created using RGB channels so all images have the same channels
+- Images which are smaller either in width or height will haver a black border
+- Cleaned images are saved with the same filename in a different folder
 
 ## Project Structure
 
 ## Data Cleaning
 Classes 
-- CleanTabular: clean_tabular.py
+- CleanTabular
     - Usage:
         ct = CleanTabular('/path/to/products.csv', '\n')
 
 - CleanImages: clean_images.py
+    - Usage:
+        ci = CleanImages()
+
+
+
