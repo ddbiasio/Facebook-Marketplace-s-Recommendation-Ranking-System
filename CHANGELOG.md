@@ -8,7 +8,7 @@
 - Image cleaning:
     - resize an image and save with RGB channels
 
-# 0.0.2 (2022-06-21)
+# 0.0.1 (2022-06-20)
 
 ## Release Highlights
 - Added class CleanTabular
