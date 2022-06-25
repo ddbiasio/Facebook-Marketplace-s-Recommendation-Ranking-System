@@ -33,7 +33,27 @@ class CleanTabular:
         # make all text in specified field lower case
         self.data_to_clean[text_field] = self.data_to_clean[text_field].str.lower()
 
-    def split_data(self, text_field: str, sep: str, index: int):
+    def split_data(self, text_field: str, sep: str, index: int, new_column: str = None):
 
+        
         # split the data using sep annd get data from index position
-        self.data_to_clean[text_field] = self.data_to_clean[text_field].str.split(sep).str[index]
+        if new_column:
+            # create a new column if specified
+            self.data_to_clean[new_column] = self.data_to_clean[text_field].str.split(sep).str[index]
+        else:
+            # otherwwise overwrite existing value
+            self.data_to_clean[text_field] = self.data_to_clean[text_field].str.split(sep).str[index]
+    
+    def make_categorical(self, text_field: str, new_column: str = None):
+
+        if new_column:
+            # create a new column if specified
+            self.data_to_clean[new_column] = (
+                self.data_to_clean[text_field].astype('category').cat.codes.astype('int64'))
+        else:
+            # otherwwise overwrite existing value
+            self.data_to_clean[text_field] = (
+                self.data_to_clean[text_field].astype('category').cat.codes.astype('int64'))   
+
+    def write_clean_file(self, file_name: str):
+        self.data_to_clean.to_csv(file_name, line_terminator ='\n')

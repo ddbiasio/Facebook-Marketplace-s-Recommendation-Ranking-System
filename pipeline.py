@@ -15,6 +15,10 @@ def clean_products():
     ct.make_lower_case("location")
     # extract product name
     ct.split_data("product_name", '|', 0)
+    # extract main category
+    ct.split_data("category", '/', 0, "main_category")
+    # catgeorise category
+    ct.make_categorical("main_category", "category_id")
 
 def clean_images():
     ci = CleanImages()
