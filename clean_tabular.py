@@ -55,5 +55,5 @@ class CleanTabular:
             self.data_to_clean[text_field] = (
                 self.data_to_clean[text_field].astype('category').cat.codes.astype('int64'))   
 
-    def write_clean_file(self, file_name: str):
-        self.data_to_clean.to_csv(file_name, line_terminator ='\n')
+    def write_clean_file(self, file_name: str,  line_terminator: str = None):
+        self.data_to_clean.to_csv(file_name, line_terminator = line_terminator)

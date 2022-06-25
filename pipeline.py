@@ -7,8 +7,9 @@ def clean_products():
 
     # ensure price is numeric
     ct.clean_currency("price")
-    # remove emojis from product description
+    # remove emojis from product description and name
     ct.clean_emojis("product_description")
+    ct.clean_emojis("product_name")
     # make text values lower case
     ct.make_lower_case("product_description")
     ct.make_lower_case("product_name")
@@ -19,6 +20,7 @@ def clean_products():
     ct.split_data("category", '/', 0, "main_category")
     # catgeorise category
     ct.make_categorical("main_category", "category_id")
+    ct.write_clean_file("clean_products.csv", '\n')
 
 def clean_images():
     ci = CleanImages()
