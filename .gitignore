@@ -9,3 +9,4 @@ geckodriver.log
 *.egg-info/
 *.log
 
+clean_products.csv
