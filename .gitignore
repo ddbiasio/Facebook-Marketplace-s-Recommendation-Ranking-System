@@ -12,3 +12,7 @@ geckodriver.log
 clean_products.csv
 svm.py
 prod_imgs.pkl
+image_cat.csv
+.gitignore
+requirements.txt
+image_cat.pkl
