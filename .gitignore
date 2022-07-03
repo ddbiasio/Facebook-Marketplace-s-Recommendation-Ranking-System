@@ -10,3 +10,4 @@ geckodriver.log
 *.log
 
 clean_products.csv
+svm.py
