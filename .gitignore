@@ -11,3 +11,4 @@ geckodriver.log
 
 clean_products.csv
 svm.py
+prod_imgs.pkl
