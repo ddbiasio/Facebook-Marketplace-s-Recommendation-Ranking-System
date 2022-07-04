@@ -16,3 +16,5 @@ image_cat.csv
 .gitignore
 requirements.txt
 image_cat.pkl
+env/
+image_cat2.pkl
